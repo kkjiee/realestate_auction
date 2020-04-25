@@ -3,6 +3,8 @@
 
 <head>
 
+    <title>낙찰가 계산하기</title>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,20 +21,48 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <title>후보2</title>
 
-    <style>
-        .myprice {
-            width: 500px;
-            margin: auto;
-        }
-    </style>
+        <style>
+            .myprice {
+                width: 500px;
+                margin: auto;
+            }
+        </style>
+        <script>
+            function calculate_predicted_value(){
+
+                $.ajax({
+                    type: "get",
+                    url: "/calculate_expected_value",
+                    data: {
+                           "input1": $("#input1").val(), 
+                           "input2": $("#input2").val(), 
+                           "input3": $("#input3").val(), 
+                           "input4": $("#input4").val(), 
+                           "input5": $("#input5").val(), 
+                           "input6": $("#input6").val(), 
+                           "input7": $("#input7").val(), 
+                           "input8": $("#input8").val(), 
+                           "input9": $("#input9").val(), 
+                           "input10": $("#input10").val(), 
+                           "input11": $("#input11").val(), 
+                           "input12": $("#input12").val(), 
+                           "input13": $("#input13").val()
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        alert(response['expected_value']);
+                        $("#expected_price").text(response['expected_value']);
+                    }
+                });
+            }
+
+        </script>
+
 </head>
 
 <body>
 
-
-    <body>
 
         <nav class="site-header sticky-top py-1">
             <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -55,106 +85,102 @@
         </nav>
 
         <div class="myprice">
-            <div>나의 낙찰가 산정하기!</div>
+            <div>나의 낙찰가 산정하기! (단위 : 만원)</div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     
-                    <span class="input-group-text" id="basic-addon3">매도금액</span>
+                    <span class="input-group-text" >매도금액</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input1" aria-describedby="basic-addon3">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">최저가</span>
+                    <span class="input-group-text" >기대수익</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input2" aria-describedby="basic-addon3">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">법무비</span>
+                    <span class="input-group-text" >법무비</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input3" aria-describedby="basic-addon3">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">관리비</span>
+                    <span class="input-group-text" >미납관리비</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input4" aria-describedby="basic-addon3">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">명도비</span>
+                    <span class="input-group-text" >명도비</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input5" aria-describedby="basic-addon3">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >공실부담금(관리비)</span>
+                </div>
+                <input type="text" class="form-control" id="input6" aria-describedby="basic-addon3">
+
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >대출이자</span>
+                </div>
+                <input type="text" class="form-control" id="input7" aria-describedby="basic-addon3">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">공실이자</span>
+                    <span class="input-group-text" >예상중도상환수수료</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
-
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">대출이자</span>
-                </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input8" aria-describedby="basic-addon3">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">중도상환수수료</span>
+                    <span class="input-group-text" >인테리어비</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input9" aria-describedby="basic-addon3">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">인테리어비</span>
+                    <span class="input-group-text" >중개수수료</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input10" aria-describedby="basic-addon3">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">중개수수료</span>
+                    <span class="input-group-text" >양도세</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input11" aria-describedby="basic-addon3">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">양도세</span>
+                    <span class="input-group-text" >취득세</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input12" aria-describedby="basic-addon3">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">취득세</span>
+                    <span class="input-group-text" >그외비용(연체금/채무비등)</span>
                 </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">그외비용(연체금/채무비등)</span>
-                </div>
-                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="input13" aria-describedby="basic-addon3">
             </div>
             <div class="expectprice">
-                <button type="button" class="btn btn-primary">낙찰가예상하기</button>
+                <button type="button" onclick="calculate_predicted_value()"  class="btn btn-primary">낙찰가예상하기</button>
             </div>
+            <div id="expected_price">
 
+            </div>
 
         </div>
 
-    </body>
-
-
-
-</html>
 
 </body>
 
