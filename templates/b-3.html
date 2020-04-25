@@ -20,6 +20,13 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <title>후보2</title>
+
+    <style>
+        .myprice {
+            width: 500px;
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,6 +55,14 @@
         </nav>
 
         <div class="myprice">
+            <div>나의 낙찰가 산정하기!</div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    
+                    <span class="input-group-text" id="basic-addon3">매도금액</span>
+                </div>
+                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+            </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon3">최저가</span>
@@ -128,6 +143,10 @@
                 </div>
                 <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
             </div>
+            <div class="expectprice">
+                <button type="button" class="btn btn-primary">낙찰가예상하기</button>
+            </div>
+
 
         </div>
 

@@ -27,7 +27,7 @@
 
     <body>
 
-        <nav class="site-header sticky-top py-1">
+        <nav class="mylist">
             <div class="container d-flex flex-column flex-md-row justify-content-between">
                 <a class="py-2" href="/b">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -47,14 +47,59 @@
             </div>
         </nav>
 
-        <div class="knowledge">
-            <li>대항력</li>
-            <li>우선변제금</li>
-            <li>최우선변제금</li>
-            <li>당해세</li>
-            <li>대항력</li>
-            <li>배당금</li>
+        <div id="list-example" class="list-group">
+            <a class="list-group-item list-group-item-action" href="#list-item-1">권리분석기초</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-2">말소기준권리</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-3">대항력</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4">우선변제권</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4">최우선변제권</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4">당해세</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4">배당금</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4">배당금순위</a>
         </div>
+        <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+            <h4 id="list-item-1">권리분석</h4>
+            <p>경매에서 가장 중요한 권리분석은 필요한 법을 기초로 반드시 알아야 하는 필수사항이며
+                대항력과 우선변제권, 최우선변제권에 필요한 전입일자, 확정일자, 배당요구종기 등의 의미를 이해하여야 한다.
+                권리분석에서 가장 중요한것은 말소기준권리를 찾아 말소기준권리보다 먼저 등기부에 등재되어 있는 전세권, 지상권, 선순위 임차인 등의 권리등 인수 대상이 있는지 확인하여야 하고 ,
+                권리가 말소기준권리보다 뒤에 있으면 낙찰로 인하여 말소된다. </p>
+            <h4 id="list-item-2">말소기준권리</h4>
+            <p>등기부상에 나타나는 모든 권리들의 말소와 인수 여부를 판단하는 기준이며 매수인이 대금납부를 하면 말소기준등기를 포함한 모든 권리가 소멸되는것을 말한다.
+                말소기준이 될 수 있는 권리는 가압류, 압류, 근저당권, 저당권, 담보가등기, 전세권 등이 있다.
+            </p>
+            <h4 id="list-item-3">대항력</h4>
+            <p>경매에서 근저당권 설정등기나 가압류 설정등기 전에 임차인이 인도와 주민등록을 모두 갖추면 제 삼자에 대하여 효력이 생긴다.
+                임대차는 그 등기가 없는 경우에도 임차인이 주택의 인도와 주민등록을 마친 때에는 그 다음 날부터 제삼자에 대하여 효력이 생긴다. 이 경우 전입신고를 한 때에 주민등록이 된 것으로 본다.
+                임대차 등기는 다음과 같을때 효력이 생긴다
+                1. 주민등록을 마친 날
+                2. 임차주택을 점유한 날
+                3. 임대차계약증서상의 확정일자를 받은 날
+            </p>
+            <h4 id="list-item-4">우선변제권</h4>
+            <p>주택을 임차하여 주민등록을 마치고 확정일자를 받았다면 대항력과 우선변제권을 가지게 되는 것으로 다른 채권 ,근저당 보다 배당금에 관해 돈을 먼저 받을 수 있는 권리이다.</p>
+            <h4 id="list-item-4">최우선변제권</h4>
+            <p>소액임차인일 경우 경매개시결정등기 전에 전입신고가 되어있으며 배당요구종기 전에 배당요구를 신청했다면 최우선변제를 받을 수 있다.
+                하지만 소재지역과 기준시기에 따라 배당액이 달라지기 때문에 주의해야한다.
+                기준시기는 임차인이 계약한 시점이 아니라 최초로 설정된 담보물권(근저당권 등)의 일자에 따라 결정된다.
+            </p>
+            <h4 id="list-item-4">당해세</h4>
+            <p>당해 재산의 소유에 따라 그 자체에서 발생하는 세금을 말한다.
+                국세와 지방세로 나뉘며 국세로는 상속세, 증여세, 종합부동산세 지방세로는 재산세, 지방교육세 가 있다.</p>
+            <h4 id="list-item-4">배당금</h4>
+            <p>배당이란 경매대상 물건의 매수대금으로 채권자의 채권을 그 순위에 따라 변제해주는 절차이며 배당금은 그 금액을 말한다.</p>
+            <h4 id="list-item-4">배당금순위</h4>
+            <p>
+                순위를 넣고싶은데 순위 나열 넣으면 우선변제권부터 이상해짐';
+                경매비용
+                필요비유익비
+                소액임차보증금 및 최종3개월분 임금, 최종3년간의 퇴직금 재해보상금
+                당해세 국세및 지방세의 법정기일전에 설정등기된 저당권, 전세권으로 담보되는 채권
+                2순위 제외 임금/국세, 지방세 등 지방자치단체의 징수금
+                공과금채권
+                일반채권자채권
+            </p>
+        </div>
+
     </body>
 
 
