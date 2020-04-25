@@ -7,13 +7,13 @@ def home():
    return 'This is Home!'
 
 
-@app1.route('/b')
+@app1.route('/home')
 def b_home():
-   return render_template('b.html')
+   return render_template('home.html')
 
-@app1.route('/b-1')
+@app1.route('/menu1')
 def b_1_home():
-   return render_template('b-1.html')
+   return render_template('basic_knowledge.html')
 
 @app1.route('/b-2')
 def b_2_home():
