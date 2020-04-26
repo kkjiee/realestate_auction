@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>중개보수계산기</title>
+
+
+
+</head>
+
+<body>
+    <div class="content_search section" data-dss-logarea="x72">
+        <link rel="stylesheet" type="text/css"
+            href="https://ssl.pstatic.net/sstatic/keypage/outside/scui/land_calculator/css/cs_land_calculator_170919.css">
+        <link rel="stylesheet" type="text/css"
+            href="https://ssl.pstatic.net/sstatic/keypage/outside/scui/land_calculator/css/cs_land_calculator_170919.css">
+        <div class="contents03">
+            <div id="header">
+                <h3>부동산 중개보수 계산기</h3>
+            </div>
+
+            <div class="cs_land_calculator" id="_land_calculator">
+                <div class="land_calculator_area">
+                    <div class="land _ctr">
+                        <ul>
+                            <li class="_kind_area">
+                                <div class="land_area _total" style="display: none;">
+                                    <span class="area_kind">매물종류</span>
+
+                                </div>
+                                <div class="land_area _select"> <span class="area_local">매물종류</span>
+                                    <div class="sbox">
+
+                                        <div class="input-group mb-3">
+                                            <select class="custom-select" id="inputGroupSelect02">
+                                                <option selected>선택하세요</option>
+                                                <option value="1">주택</option>
+                                                <option value="2">오피스텔</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="_region_area">
+                                <div class="land_area _total" style="display: none;">
+                                    <span class="area_local">거래지역</span>
+
+                                </div>
+                                <div class="land_area _select"> <span class="area_local">거래지역</span>
+                                    <div class="sbox">
+
+
+                                        <div class="input-group mb-3">
+                                            <select class="custom-select" id="inputGroupSelect02">
+                                                <option selected>선택하세요</option>
+                                                <option value="1">서울시</option>
+                                                <option value="2">경기도</option>
+                                                <option value="3">인천시</option>
+                                                <option value="4">부산시</option>
+                                                <option value="5">대전시</option>
+                                                <option value="6">대구시</option>
+                                                <option value="7">울산시</option>
+                                                <option value="8">세종시</option>
+                                                <option value="9">광주시</option>
+                                                <option value="10">강원도</option>
+                                                <option value="11">충청북도</option>
+                                                <option value="12">충청남도</option>
+                                                <option value="13">경상북도</option>
+                                                <option value="14">경상남도</option>
+                                                <option value="15">전라북도</option>
+                                                <option value="16">전라남도</option>
+                                                <option value="17">제주도</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="_kind_area">
+                                <div class="land_area _total" style="display: none;">
+                                    <span class="area_kind">매물종류</span>
+
+                                </div>
+                                <div class="land_area _select"> <span class="area_local">매물종류</span>
+                                    <div class="sbox">
+
+                                        <div class="input-group mb-3">
+                                            <select class="custom-select" id="inputGroupSelect02">
+                                                <option selected>선택하세요</option>
+                                                <option value="1">매매교환</option>
+                                                <option value="2">임대차(전세/월세)</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="_trade_cost_area">
+                                <div class="land_area"> <label for="input_land" class="area_local">거래금액</label>
+                                    <div class="l_input"> <span class="land_input_area"> <input
+                                                onclick="tCR('a=nco_x72*1.money&r=1&i=80154e37_000000000000');"
+                                                type="text" title="월적립액" id="input_land" style="width:238px;height:26px"
+                                                class="_input">
+                                            <span class="won">원</span> </span> </div>
+                                </div> <span class="insert_txt _text" style="display:none;"></span>
+                            </li>
+
+
+                            <li class="_appointed_rate_area">
+                                <div class="land_area">
+                                    <label for="input_land" class="money_name">협의보수율</label>
+                                    <div class="l_input">
+                                        <span class="land_input_area">
+                                            <input onclick="tCR('a=nco_x72*1.rate&r=1&i=80154e37_000000000000');"
+                                                type="text" title="월적립액" id="input_land" style="width:238px;height:26px"
+                                                class="_input">
+                                            <span class="per">%</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button type="button" class="btn btn-primary">계산하기</button>
+        <button type="button" class="btn btn-primary">입력하기</button>
+
+    </div>
+
+
+    <div class="lca_notice">
+        <dl>
+            <dt class="blind">유의사항</dt>
+            <dd>부동산 거래 시 부과될 수 있는 부동산 중개보수 예상 금액을 산정하기 위한 참고용 계산기이며, 실제 부과되는 중개보수와는 차이가 있을 수 있습니다.</dd>
+            <dd>협의보수율을 입력하지 않거나, 상한요율보다 높으면 상한요율이 적용됩니다.</dd>
+        </dl>
+    </div>
+
+
+
+
+
+
+    <p>※ 아래의 내용 중 주택 부분은 개정법에 의한 시·도 조례 개정시 변경될 수 있습니다.</p>
+    <h4 class="sub-title">부동산 중개보수 요율표 보기</h4>
+
+
+
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        주 택
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table class="sp">
+
+                        <tr>
+                            <th>거래내용</th>
+                            <th>거래금액</th>
+                            <th>상한요율</th>
+                            <th>한도액</th>
+                            <th>중개보수<br>요율 결정</th>
+                            <th>거래금액 산정</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="5" class="thc">매매교환</td>
+                            <td>⊙ 5천만원 미만</td>
+                            <td class="cl">1천분의 6</td>
+                            <td class="cl">25만원</td>
+                            <td rowspan="4">
+                                ⊙ 중개보수 한도
+                                <br />
+                                = 거래 금액 × 상한요율
+                                (단, 이 때 계산된 금액은
+                                한도액을 초과할 수 없음)
+                            </td>
+                            <td rowspan="5">
+                                ⊙ 매매:매매가격
+                                <br />
+                                ⊙ 교환:교환대상
+                                중 가격이 큰
+                                중개대상물
+                                가격
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ⊙ 5천만원 이상~
+                                2억원 미만
+                            </td>
+                            <td class="cl">1천분의 5</td>
+                            <td class="cl">80만원</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ⊙ 2억원 이상~
+                                6억원 미만
+                            </td>
+                            <td class="cl">1천분의 4</td>
+                            <td class="cl">없음</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ⊙ 6억원 이상~
+                                9억원 미만
+                            </td>
+                            <td class="cl">1천분의 5</td>
+                            <td class="cl">없음</td>
+                        </tr>
+                        <tr>
+                            <td>⊙ 9억원 이상 </td>
+                            <td colspan="2">
+                                거래금액의
+                                1천분의( )이하
+                            </td>
+                            <td>
+                                ⊙ 상한요율 1천분의
+                                9 이내에서 개업공인중개사가
+                                정한 좌측의 상한요율
+                                이하에서 중개의뢰인과
+                                개업공인중개사가 협의하여
+                                결정함.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5" class="thc">
+                                임대차 등
+                                <br />
+                                (매매·교환
+                                이외의 거래)
+                            </td>
+                            <td>⊙ 5천만원 미만</td>
+                            <td class="cl">1천분의 5</td>
+                            <td class="cl">20만원</td>
+                            <td rowspan="4">
+                                ⊙ 중개보수 한도 <br />
+                                =
+                                거래 금액 × 상한요율
+                                (단, 이 때 계산된
+                                금액은 한도액을
+                                초과할 수 없음)
+                            </td>
+                            <td rowspan="5">
+                                ⊙ 전세:전세금
+                                <br />
+                                ⊙ 월세: 보증금 +
+                                (월 차임×100). 단,이 때 계산된 금액이 5천만원 미만일 경우 :
+                                보증 금+(월 차임액× 70)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ⊙ 5천만원 이상~
+                                1억원 미만
+                            </td>
+                            <td class="cl">1천분의 4</td>
+                            <td class="cl">30만원</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ⊙ 1억원 이상~
+                                3억원 미만
+                            </td>
+                            <td class="cl">1천분의 3</td>
+                            <td class="cl">없음</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ⊙ 3억원 이상~
+                                6억원 미만
+                            </td>
+                            <td class="cl">1천분의 4</td>
+                            <td class="cl">없음</td>
+                        </tr>
+                        <tr>
+                            <td>⊙ 6억원 이상</td>
+                            <td colspan="2">
+                                거래금액의
+                                1천분의( )이하
+                            </td>
+                            <td>
+                                ⊙ 상한요율 1천분의
+                                8 이내에서개업공인중개사가
+                                정한 좌측의 상한요율
+                                이하에서 중개 의뢰인과
+                                개업공인중개사가 협의하여
+                                결정함.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        주거용 오피스텔<br>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <table class="sp">
+                        <colgroup>
+                            <col style="width:160px" />
+                            <col style="width:260px" />
+                        </colgroup>
+
+                        <tr>
+                            <th>구분</th>
+                            <th>상한요율</th>
+                        </tr>
+                        <tr>
+                            <td class="thc">매매/교환</td>
+                            <td align="center">1천분의 5</td>
+                        </tr>
+                        <tr>
+                            <td class="thc">임대차 등</td>
+                            <td align="center">1천분의 4</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+
+</body>
+
+</html>
