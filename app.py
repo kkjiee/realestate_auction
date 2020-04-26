@@ -7,6 +7,10 @@ def home():
    return 'This is Home!'
 
 
+@app1.route('/dealcharge')
+def dealcharge():
+   return render_template('dealcharge.html')
+
 @app1.route('/home')
 def b_home():
    return render_template('home.html')
