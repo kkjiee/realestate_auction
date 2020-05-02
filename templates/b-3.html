@@ -51,7 +51,7 @@
                 },
                 dataType: "json",
                 success: function (response) {
-                    alert(response['expected_value']);
+                    //alert(response['expected_value']);
                     $("#expected_price").text(response['expected_value']);
                 }
             });
@@ -199,7 +199,7 @@
         </div>
         <div class="expectprice">
             <button type="button" onclick="calculate_predicted_value()" class="btn btn-primary">계산하기</button>
-
+            <span id="expected_price"> </span>
 
         </div>
 
