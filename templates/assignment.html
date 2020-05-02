@@ -51,6 +51,12 @@
                 }
             });
         }
+        function get_diff_value(){
+            var diff = $("#input1").val() - $("#input2").val() -  $("#input3").val() ;
+            // alert(diff);
+            $("#input4").val(diff);
+        }
+
 
     </script>
 </head>
@@ -82,74 +88,86 @@
 
                 <span class="input-group-text">양도가액</span>
             </div>
-            <input type="text" class="form-control" id="input1" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input1" aria-describedby="basic-addon3"  onchange="get_diff_value()">
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">취득가액</span>
             </div>
-            <input type="text" class="form-control" id="input2" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input2" aria-describedby="basic-addon3"  onchange="get_diff_value()">
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">필요경비</span>
             </div>
-            <input type="text" class="form-control" id="input3" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input3" aria-describedby="basic-addon3"  onchange="get_diff_value()">
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">양도차액</span>
             </div>
-            <input type="text" class="form-control" id="input4" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input4" aria-describedby="basic-addon3" readonly>
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">장기보유특별공제</span>
             </div>
-            <input type="text" class="form-control" id="input5" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input5" aria-describedby="basic-addon3">
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">양도소득기본공제</span>
             </div>
-            <input type="text" class="form-control" id="input6" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input6" aria-describedby="basic-addon3">
 
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">과세표준</span>
             </div>
-            <input type="text" class="form-control" id="input7" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input7" aria-describedby="basic-addon3">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">세율</span>
             </div>
-            <input type="text" class="form-control" id="input8" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input8" aria-describedby="basic-addon3">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">산출세액</span>
             </div>
-            <input type="text" class="form-control" id="input9" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input9" aria-describedby="basic-addon3">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">지방소득세</span>
             </div>
-            <input type="text" class="form-control" id="input10" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="input10" aria-describedby="basic-addon3">
         </div>
 
         <div class="expectprice">
             <button type="button" onclick="calculate_assignment_value()" class="btn btn-primary">계산하기</button>
+            <span id="expected_price"> </span>
         </div>
 
     </div>
 
 
 </body>
+<script>
+        $("#input1").on("propertychange change keyup paste input", function() {
+            get_diff_value();
+        });
+        $("#input2").on("propertychange change keyup paste input", function() {
+            get_diff_value();
+        });
+        $("#input3").on("propertychange change keyup paste input", function() {
+            get_diff_value();
+        });
+</script>
 
 </html>

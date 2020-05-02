@@ -6,12 +6,12 @@ from flask import render_template,  request, jsonify
 def home():
    return 'This is Home!'
 
-@app1.route('/assignment_value')
-def assignment_value():
+@app1.route('/assignment')
+def assignment():
    return render_template('assignment.html')
 
-@app1.route('/calculate_expected_value')
-def calculate_expected_value():
+@app1.route('/dealcharge')
+def dealcharge():
    return render_template('dealcharge.html')
 
 @app1.route('/home')
@@ -89,9 +89,9 @@ def assignment_value():
    input8 = request.args.get('input8')
    input9 = request.args.get('input9')
    input10 = request.args.get('input10')
-  
 
-   expected_value = int(input1) - int(input2) - int(input3) - int(input4) - int(input5) - int(input6) - int(input7) - int(input8) - int(input9) - int(input10) - int(input11) - int(input12) - int(input13)
+
+   expected_value = int(input1) - int(input2) - int(input3) - int(input4) - int(input5) - int(input6) - int(input7) - int(input8) - int(input9) - int(input10)
 
 
    print(input1)
@@ -104,7 +104,7 @@ def assignment_value():
    print(input8)
    print(input9)
    print(input10)
-  
+
 
    data = {"expected_value": expected_value}
    return jsonify(data)
