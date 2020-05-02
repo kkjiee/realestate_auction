@@ -6,9 +6,12 @@ from flask import render_template,  request, jsonify
 def home():
    return 'This is Home!'
 
+@app1.route('/assignment_value')
+def assignment_value():
+   return render_template('assignment.html')
 
-@app1.route('/dealcharge')
-def dealcharge():
+@app1.route('/calculate_expected_value')
+def calculate_expected_value():
    return render_template('dealcharge.html')
 
 @app1.route('/home')
@@ -27,9 +30,9 @@ def b_2_home():
 def b_3_home():
    return render_template('b-3.html')
 
-@app1.route('/b-4')
-def b_4_home():
-   return render_template('b-4.html')
+# @app1.route('/b-4')
+# def b_4_home():
+#    return render_template('b-4.html')
 
 @app1.route('/path1')
 def path1():
@@ -71,6 +74,43 @@ def calculate_expected_value():
 
    data = {"expected_value": expected_value}
    return jsonify(data)
+
+
+
+@app1.route('/assignment_value', methods=['GET'])
+def assignment_value():
+   input1 = request.args.get('input1')
+   input2 = request.args.get('input2')
+   input3 = request.args.get('input3')
+   input4 = request.args.get('input4')
+   input5 = request.args.get('input5')
+   input6 = request.args.get('input6')
+   input7 = request.args.get('input7')
+   input8 = request.args.get('input8')
+   input9 = request.args.get('input9')
+   input10 = request.args.get('input10')
+  
+
+   expected_value = int(input1) - int(input2) - int(input3) - int(input4) - int(input5) - int(input6) - int(input7) - int(input8) - int(input9) - int(input10) - int(input11) - int(input12) - int(input13)
+
+
+   print(input1)
+   print(input2)
+   print(input3)
+   print(input4)
+   print(input5)
+   print(input6)
+   print(input7)
+   print(input8)
+   print(input9)
+   print(input10)
+  
+
+   data = {"expected_value": expected_value}
+   return jsonify(data)
+
+
+
 
 @app1.route('/in')
 def index():
