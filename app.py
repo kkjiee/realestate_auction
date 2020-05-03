@@ -91,7 +91,7 @@ def assignment_value():
    input10 = request.args.get('input10')
 
 
-   expected_value = int(input1) - int(input2) - int(input3) - int(input4) - int(input5) - int(input6) - int(input7) - int(input8) - int(input9) - int(input10)
+  #수정필요 expected_value = int(input1) - int(input2) - int(input3) - int(input4) - int(input5) - int(input6) - int(input7) - int(input8) - int(input9) - int(input10)
 
 
    print(input1)
