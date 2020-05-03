@@ -45,7 +45,16 @@
             $("#expected_price").val(diff);
         }
     </script>
+    <style>
+        * {
+            text-align: center;
+        }
 
+        .myprice {
+            width: 500px;
+            margin: auto;
+        }
+    </style>
 
 
 </head>
@@ -53,7 +62,7 @@
 <body>
 
     <div class="myprice">
-        <div>중개수수료 계산하기! (단위 : 만원)</div>
+        <h1>중개수수료 (단위 : 만원)</h1>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">거래가액</span>
@@ -70,13 +79,13 @@
         </div>
 
 
-        
+
         <div class="expectprice">
             <button type="button" onclick="calculate_charge_value()" class="btn btn-primary">계산하기</button>
             <span id="expected_price"> </span>
-
+            <button type="button" onclick="      ()" class="btn btn-primary">적용하기</button>
         </div>
-        <button type="button" onclick="      ()" class="btn btn-primary">적용하기</button>
+
 
     </div>
 
@@ -87,7 +96,7 @@
     </dl>
 
 
-    <h2 class="mt40">중개수수료 요율표(서울시기준)</h2>
+    <h2 class="mt40">중개수수료 요율표(서울시 기준)</h2>
     <table class="table">
         <thead class="thead-dark">
             <tr>

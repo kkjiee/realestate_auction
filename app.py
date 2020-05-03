@@ -83,7 +83,7 @@ def assignment_value():
    input10 = request.args.get('input10')
 
 
-   expected_value = int(input9) + int(input10)
+   expected_value = float(input9) + float(input10)
 
    print(input9)
    print(input10)
