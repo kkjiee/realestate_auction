@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDPPA.woff">
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -55,6 +55,23 @@
         .wholesheet {
             width: 900px;
             margin: auto;
+        }
+
+        .chart_name {
+            font-size: 30px;
+        }
+
+        * {
+            font-family: 'MapoDPPA';
+            ;
+
+        }
+
+        @font-face {
+            font-family: 'MapoDPPA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDPPA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
     </style>
 
@@ -106,7 +123,7 @@
     </dl>
 
 
-    <h2 class="mt40">중개수수료 요율표(서울시 기준)</h2>
+    <div class="chart_name">중개수수료 요율표(서울시 기준)</div>
     <div class="wholesheet">
         <table class="table">
             <thead class="thead-dark">
