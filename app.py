@@ -18,7 +18,7 @@ def dealcharge():
 def b_home():
    return render_template('home.html')
 
-@app1.route('/menu1')
+@app1.route('/basic_knowledge')
 def b_1_home():
    return render_template('basic_knowledge.html')
 
@@ -87,6 +87,23 @@ def assignment_value():
 
    print(input9)
    print(input10)
+
+
+   data = {"expected_value": expected_value}
+   return jsonify(data)
+
+
+   
+@app1.route('/calculate_charge_value', methods=['GET'])
+def calculate_charge_value():
+   input1 = request.args.get('input1')
+   input2 = request.args.get('input2')
+
+
+   expected_value = int(input1) * int(input2)
+
+   print(input1)
+   print(input2)
 
 
    data = {"expected_value": expected_value}

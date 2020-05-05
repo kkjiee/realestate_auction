@@ -21,11 +21,13 @@
         crossorigin="anonymous"></script>
     <title>중개수수료계산</title>
     <script>
-        function calculate_dealcharge_value() {
+
+
+        function calculate_charge_value() {
 
             $.ajax({
                 type: "get",
-                url: "/dealcharge_value",
+                url: "/calculate_charge_value",
                 data: {
                     "input1": $("#input1").val(),
                     "input2": $("#input2").val(),
@@ -33,25 +35,25 @@
                 },
                 dataType: "json",
                 success: function (response) {
-                    alert(response['expected_value']);
                     $("#expected_price").text(response['expected_value']);
                 }
             });
         }
 
 
-        function get_diff_value1() {
-            var diff = $("#input1").val() * $("#input2").val();
-            $("#expected_price").val(diff);
-        }
     </script>
     <style>
         * {
             text-align: center;
         }
 
-        .myprice {
+        .lead {
             width: 500px;
+            margin: auto;
+        }
+
+        .wholesheet {
+            width: 900px;
             margin: auto;
         }
     </style>
@@ -60,147 +62,156 @@
 </head>
 
 <body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">중개수수료 </h1>
+            <h4>(단위 : 만원)</h4>
+            <div class="lead">
 
-    <div class="myprice">
-        <h1>중개수수료 (단위 : 만원)</h1>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">거래가액</span>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+
+                        <span class="input-group-text">거래가액</span>
+                    </div>
+                    <input type="text" class="form-control" id="input1" placeholder="예)5000"
+                        aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+
+                        <span class="input-group-text">상한요율</span>
+                    </div>
+                    <input type="text" class="form-control" id="input2" placeholder="예)0.5"
+                        aria-describedby="basic-addon3">
+                </div>
+
             </div>
-            <input type="text" class="form-control" placeholder="예)5000" aria-label="price"
-                aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">보수료율</span>
+
+            <div class="expectprice">
+                <span id="expected_price"> </span>(만원)
+                <button type="button" onclick="calculate_charge_value()" class="btn btn-primary">계산하기</button>
+                <span id="expected_price"> </span>
+                <!-- <button type="button" onclick="      ()" class="btn btn-primary">적용하기</button> -->
             </div>
-            <input type="text" class="form-control" placeholder="예)0.5" aria-label="percent"
-                aria-describedby="basic-addon1">
+
         </div>
-
-
-
-        <div class="expectprice">
-            <button type="button" onclick="calculate_charge_value()" class="btn btn-primary">계산하기</button>
-            <span id="expected_price"> </span>
-            <button type="button" onclick="      ()" class="btn btn-primary">적용하기</button>
-        </div>
-
-
     </div>
 
+
+
     <dl class="boxCaution mt20">
-        <dt>중개보수료 산출방법 : 거래가액 × 보수료율</dt>
+        <dt>중개보수료 산출방법 : 거래가액 × 상한요율</dt>
         <dd>- 매매, 교환, 전세 : 계약금액을 거래가액으로 함</dd>
         <dd>- 월세 : 거래가액 = 보증금 ＋ (월세 × 100) * 단, 거래가액이 5천만원 미만일 경우 100을 70으로 함</dd>
     </dl>
 
 
     <h2 class="mt40">중개수수료 요율표(서울시 기준)</h2>
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">매매교환기준금액</th>
-                <th scope="col">상한요율</th>
-                <th scope="col">한도액</th>
-                <th scope="col">거래금액산정</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">5000만원 미만</th>
-                <td>0.6%</td>
-                <td>25만원</td>
-                <td>매매:매매가격</td>
-            </tr>
-            <tr>
-                <th scope="row">5000만원 이상 - 2억원 미만</th>
-                <td>0.5%</td>
-                <td>80만원</td>
-                <td>교환:교환대상중 가격이 큰 대상물 가격</td>
-            </tr>
-            <tr>
-                <th scope="row">2억원 이상 - 6억원 미만</th>
-                <td>0.4%</td>
-                <td>없음</td>
-                <td>전체동일</td>
-            </tr>
-            <tr>
-                <th scope="row">6억원 이상 - 9억원 미만</th>
-                <td>0.5%</td>
-                <td>없음</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row">9억원 이상</th>
-                <td>0.9%내 협의</td>
-                <td>0.9%내 협의</td>
-                <td></td>
-            </tr>
-        </tbody>
-
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">임대차기준금액</th>
-                <th scope="col">상한요율</th>
-                <th scope="col">한도액</th>
-                <th scope="col">거래금액산정</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">5천만원 미만</th>
-                <td>0.5%</td>
-                <td>20만원</td>
-                <td>전세:전세금</td>
-            </tr>
-            <tr>
-                <th scope="row">5천만원 이상 - 1억원 미만</th>
-                <td>0.4%</td>
-                <td>30만원</td>
-                <td>월세:보증금+(월차임x100)</td>
-            </tr>
-            <tr>
-                <th scope="row">1억원 이상 - 3억원 미만</th>
-                <td>0.3%</td>
-                <td>없음</td>
-                <td>단, 계산금액이 5천만원 미만 시 보증금+(월차임액x70)</td>
-            </tr>
-            <tr>
-                <th scope="row">3억원 이상 - 6억원 미만</th>
-                <td>0.4%</td>
-                <td>없음</td>
-                <td>전체동일</td>
-            </tr>
-            <tr>
-                <th scope="row">6억원 이상</th>
-                <td>0.8%내 협의</td>
-                <td>0.8%내 협의</td>
-                <td></td>
-            </tr>
-        </tbody>
-
+    <div class="wholesheet">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">오피스텔</th>
+                    <th scope="col">매매교환기준금액</th>
                     <th scope="col">상한요율</th>
+                    <th scope="col">한도액</th>
+                    <th scope="col">거래금액산정</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">매매/교환</th>
-                    <td>0.5%</td>
+                    <th scope="row">5000만원 미만</th>
+                    <td>0.6%</td>
+                    <td>25만원</td>
+                    <td>매매:매매가격</td>
                 </tr>
                 <tr>
-                    <th scope="row">임대차 등</th>
+                    <th scope="row">5000만원 이상 - 2억원 미만</th>
+                    <td>0.5%</td>
+                    <td>80만원</td>
+                    <td>교환:교환대상중 가격이 큰 대상물 가격</td>
+                </tr>
+                <tr>
+                    <th scope="row">2억원 이상 - 6억원 미만</th>
                     <td>0.4%</td>
+                    <td>없음</td>
+                    <td>전체동일</td>
+                </tr>
+                <tr>
+                    <th scope="row">6억원 이상 - 9억원 미만</th>
+                    <td>0.5%</td>
+                    <td>없음</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">9억원 이상</th>
+                    <td>0.9%내 협의</td>
+                    <td>0.9%내 협의</td>
+                    <td></td>
                 </tr>
             </tbody>
+
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">임대차기준금액</th>
+                    <th scope="col">상한요율</th>
+                    <th scope="col">한도액</th>
+                    <th scope="col">거래금액산정</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">5천만원 미만</th>
+                    <td>0.5%</td>
+                    <td>20만원</td>
+                    <td>전세:전세금</td>
+                </tr>
+                <tr>
+                    <th scope="row">5천만원 이상 - 1억원 미만</th>
+                    <td>0.4%</td>
+                    <td>30만원</td>
+                    <td>월세:보증금+(월차임x100)</td>
+                </tr>
+                <tr>
+                    <th scope="row">1억원 이상 - 3억원 미만</th>
+                    <td>0.3%</td>
+                    <td>없음</td>
+                    <td>단, 계산금액이 5천만원 미만 시 보증금+(월차임액x70)</td>
+                </tr>
+                <tr>
+                    <th scope="row">3억원 이상 - 6억원 미만</th>
+                    <td>0.4%</td>
+                    <td>없음</td>
+                    <td>전체동일</td>
+                </tr>
+                <tr>
+                    <th scope="row">6억원 이상</th>
+                    <td>0.8%내 협의</td>
+                    <td>0.8%내 협의</td>
+                    <td></td>
+                </tr>
+            </tbody>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">오피스텔</th>
+                        <th scope="col">상한요율</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">매매/교환</th>
+                        <td>0.5%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">임대차 등</th>
+                        <td>0.4%</td>
+                    </tr>
+                </tbody>
+            </table>
         </table>
-    </table>
 
-
+    </div>
 </body>
 
 </html>
