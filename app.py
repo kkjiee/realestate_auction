@@ -100,7 +100,7 @@ def calculate_charge_value():
    input2 = request.args.get('input2')
 
 
-   expected_value = float(input1) * float(input2)
+   expected_value = float(input1) * float(input2) / 100
 
    print(input1)
    print(input2)
