@@ -1,10 +1,10 @@
 from flask import Flask
 app1 = Flask("my app")
-from flask import render_template,  request, jsonify
+from flask import render_template,  request, jsonify, redirect
 
 @app1.route('/')
 def home():
-   return 'This is Home!'
+   return redirect('/home')
 
 @app1.route('/assignment')
 def assignment():
@@ -117,4 +117,5 @@ def index():
    return render_template('index.html')
 
 if __name__ == '__main__':
-   app1.run("0.0.0.0", port=5000,debug=True)
+   #app1.run("0.0.0.0", port=5000,debug=True)
+   app1.run("0.0.0.0", port=80,debug=True)
