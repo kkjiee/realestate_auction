@@ -52,7 +52,7 @@
                 },
                 dataType: "json",
                 success: function (response) {
-                    alert(response['expected_value']);
+                    // alert(response['expected_value']);
                     $("#expected_price").text(response['expected_value']);
                 }
             });
@@ -61,7 +61,7 @@
 
         function get_diff_value1() {
             var diff = $("#input1").val() - $("#input2").val() - $("#input3").val();
-            // alert(diff);
+          
             $("#input4").val(diff);
         }
 
@@ -198,6 +198,18 @@
     });
     $("#input3").on("propertychange change keyup paste input", function () {
         get_diff_value1();
+    });
+    $("#input5").on("propertychange change keyup paste input", function () {
+        get_diff_value2();
+    });
+    $("#input6").on("propertychange change keyup paste input", function () {
+        get_diff_value2();
+    });
+    $("#input8").on("propertychange change keyup paste input", function () {
+        get_diff_value3();
+    });
+    $("#input10").on("propertychange change keyup paste input", function () {
+        get_diff_value4();
     });
 </script>
 
